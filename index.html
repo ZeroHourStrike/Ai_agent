@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewAI Social Problem Solver</title>
+    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Social Problem Solver</h1>
+            <p class="tagline">Unlocking Insights for a Better Tomorrow</p>
+        </header>
+        <section class="input-section">
+            <h2>Analyze a Social Problem</h2>
+            <form method="POST" class="problem-form">
+                <div class="form-group">
+                    <label for="prompt">Describe the social problem:</label>
+                    <textarea id="prompt" name="prompt" rows="5" required placeholder="Enter a detailed description of the social problem you want to analyze."></textarea>
+                </div>
+                <button type="submit" class="analyze-button">Analyze</button>
+            </form>
+        </section>
+
+        {% if result %}
+        <section class="result-section">
+            <h2>Analysis Result</h2>
+            <div class="result-box">
+                <p>{{ result }}</p>
+            </div>
+        </section>
+        {% endif %}
+
+        <footer>
+            <p>&copy; 2025 CrewAI - Solving Together</p>
+        </footer>
+    </div>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f8; /* Light, clean background */
+    color: #333;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 80%;
+    max-width: 700px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #2c3e50; /* Dark, professional heading */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header .tagline {
+    color: #777;
+    font-size: 1rem;
+}
+
+.input-section, .result-section {
+    margin-bottom: 40px;
+}
+
+.input-section h2, .result-section h2 {
+    color: #3498db; /* Vibrant accent color */
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.problem-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group textarea,
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea:focus,
+.form-group input[type="text"]:focus {
+    border-color: #3498db; /* Focus highlight */
+    outline: none;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.analyze-button {
+    background-color: #3498db; /* Vibrant action button */
+    color: #fff;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.analyze-button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+}
+
+.result-box {
+    background-color: #e7f2ff; /* Light background for result */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #d0e6ff;
+    font-size: 1rem;
+    color: #444;
+    white-space: pre-wrap; /* Preserve formatting of the result */
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+    </style>
+</body>
+</html>
